@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/signalpay.iml" filepath="$PROJECT_DIR$/.idea/signalpay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/signalpaydemo.iml" filepath="$PROJECT_DIR$/.idea/signalpaydemo.iml" />
     </modules>
   </component>
 </project>
