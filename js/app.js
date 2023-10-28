@@ -78,13 +78,17 @@ let app = new Vue({
                 this.cart.splice(index, 1);
                 this.updateCartStorage()
             }
+
+            if (!this.cart.length) {
+                this.closeCart()
+            }
         },
         openCart() {
             if (this.cart.length) {
                 this.cartIsOpen = true
-            }
 
-            document.body.style.overflow = 'hidden'
+                document.body.style.overflow = 'hidden'
+            }
         },
         closeCart() {
             this.cartIsOpen = false

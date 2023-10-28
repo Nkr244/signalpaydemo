@@ -129,6 +129,7 @@
       object-fit: contain;
       max-width: 335px;
       margin-bottom: 37px;
+      height: 265px;
     }
 
     .product-title {
@@ -334,6 +335,8 @@
   max-width: 602px;
   width: 100%;
   flex-direction: column;
+  height: calc(100vh - 166px);
+  margin-top: 96px;
 
   &-title {
     justify-content: space-between;
@@ -341,17 +344,15 @@
   }
 
   &-product {
-    padding: 22px 0;
+    padding: 22px 0 50px 0;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid $border;
-
+    position: relative;
     &-text {
       flex-direction: column;
       gap: 6px;
-      text-wrap: nowrap;
-      max-width: 135px;
-
+      max-width: 185px;
       .text-grey {
         text-wrap: wrap;
 
@@ -408,6 +409,9 @@
     }
 
     .btn-close {
+
+      top: 0;
+      right: 0;
       border-radius: 50%;
       width: 21px;
       height: 21px;
@@ -638,6 +642,8 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   display: none;
+  height: calc(100vh - 166px);
+  margin-top: 96px;
 
   &.open {
     display: block;
@@ -985,11 +991,27 @@
   }
   .modal-wrapper {
     background: rgba(0, 0, 0, 0);
+    padding: 0;
 
     .modal-cart {
       &-product {
+        justify-content: start;
+        gap: 10px;
+        &-button {
+          position: absolute;
+          top: 70%;
+          left: 79px;
+        }
+        &-price {
+          position: absolute;
+          bottom: 20px;
+          right: 0;
+        }
         img {
           max-width: 68px;
+        }
+        .btn-close {
+          top: -20px;
         }
       }
     }

@@ -181,7 +181,7 @@
                         </button>
                     </div>
                     <div class="modal-cart-product-price">
-                        {{ item.product.price * item.count }}руб.
+                        {{ item.product.price * item.count }} руб.
                     </div>
 
 
@@ -190,46 +190,25 @@
                 </div>
             </div>
             <div class="product-list product-list-mobile close">
-                <div class="modal-cart-product d-flex">
-                    <img src="image/smart-watch.png" alt="">
+                <div class="modal-cart-product d-flex" v-for="item in cart">
+                    <img :src="item.product.image" alt="">
                     <div>
                         <div class="modal-cart-product-text d-flex">
-                            <p>Smart Watch GST 554</p>
-                            <p class="text-grey">Space Black</p>
+                            <p>{{ item.product.title }}</p>
+                            <p class="text-grey">{{ item.product.subtitle }}</p>
                         </div>
                         <div class="button-price d-flex justify-content-between">
                             <div class="modal-cart-product-button">
-                                <button class="button-minus"><img src="image/minus.svg" alt=""></button>
-                                <span class="col">1</span>
-                                <button class="button-plus"><img src="image/plus.svg" alt=""></button>
+                                <button class="button-minus" @click.prevent="item.count != 1 ? item.count-- : ''"><img src="image/minus.svg" alt=""></button>
+                                <span class="col">{{ item.count }}</span>
+                                <button class="button-plus" @click.prevent="item.count++"><img src="image/plus.svg" alt=""></button>
                             </div>
                             <div class="modal-cart-product-price">
-                                2499руб.
+                                {{ item.product.price * item.count }} руб.
                             </div>
                         </div>
                     </div>
-                    <button class="btn-delete btn-close"><img src="image/close-mini.svg" alt=""></button>
-
-                </div>
-                <div class="modal-cart-product d-flex">
-                    <img src="image/burger-mini.png" alt="">
-                    <div>
-                        <div class="modal-cart-product-text d-flex">
-                            <p>Бургер Super King</p>
-                            <p class="text-grey">Говядина, помидор, сырный соус, сыр</p>
-                        </div>
-                        <div class="button-price d-flex justify-content-between">
-                            <div class="modal-cart-product-button">
-                                <button class="button-minus"><img src="image/minus.svg" alt=""></button>
-                                <span class="col">1</span>
-                                <button class="button-plus"><img src="image/plus.svg" alt=""></button>
-                            </div>
-                            <div class="modal-cart-product-price">
-                                299 руб.
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn-delete btn-close"><img src="image/close-mini.svg" alt=""></button>
+                    <button class="btn-delete btn-close" @click.prevent="removeFromCart(item.product)"><img src="image/close-mini.svg" alt=""></button>
 
                 </div>
             </div>

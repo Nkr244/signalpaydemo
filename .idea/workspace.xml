@@ -7,10 +7,11 @@
     <list default="true" id="be01853f-2efe-4eda-b7d9-24ca0cb29e57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/common/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/common/common.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/common/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/scss/common/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/common/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/common/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/common/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/common/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/common/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/common/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/scss/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/scss/index.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
@@ -77,7 +78,7 @@
       <updated>1698386004708</updated>
       <workItem from="1698386005725" duration="20760000" />
       <workItem from="1698500469696" duration="2407000" />
-      <workItem from="1698503041098" duration="14887000" />
+      <workItem from="1698503041098" duration="16377000" />
     </task>
     <servers />
   </component>

@@ -119,8 +119,7 @@ table {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   overflow: auto;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 0;
 }
 
 .close {
@@ -253,6 +252,7 @@ table {
   object-fit: contain;
   max-width: 335px;
   margin-bottom: 37px;
+  height: 265px;
 }
 .product-item .product-title {
   font-size: 20px;
@@ -423,22 +423,24 @@ table {
   max-width: 602px;
   width: 100%;
   flex-direction: column;
+  height: calc(100vh - 166px);
+  margin-top: 96px;
 }
 .modal-cart-title {
   justify-content: space-between;
   margin-bottom: 35px;
 }
 .modal-cart-product {
-  padding: 22px 0;
+  padding: 22px 0 50px 0;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid rgb(216, 216, 216);
+  position: relative;
 }
 .modal-cart-product-text {
   flex-direction: column;
   gap: 6px;
-  text-wrap: nowrap;
-  max-width: 135px;
+  max-width: 185px;
 }
 .modal-cart-product-text .text-grey {
   text-wrap: wrap;
@@ -483,6 +485,8 @@ table {
   border: 1px solid rgb(91, 92, 92);
 }
 .modal-cart-product .btn-close {
+  top: 0;
+  right: 0;
   border-radius: 50%;
   width: 21px;
   height: 21px;
@@ -667,6 +671,8 @@ table {
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   display: none;
+  height: calc(100vh - 166px);
+  margin-top: 96px;
 }
 .menu-mobile-back.open {
   display: block;
@@ -945,9 +951,27 @@ table {
   }
   .modal-wrapper {
     background: rgba(0, 0, 0, 0);
+    padding: 0;
+  }
+  .modal-wrapper .modal-cart-product {
+    justify-content: start;
+    gap: 10px;
+  }
+  .modal-wrapper .modal-cart-product-button {
+    position: absolute;
+    top: 70%;
+    left: 79px;
+  }
+  .modal-wrapper .modal-cart-product-price {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
   }
   .modal-wrapper .modal-cart-product img {
     max-width: 68px;
+  }
+  .modal-wrapper .modal-cart-product .btn-close {
+    top: -20px;
   }
   .modal-wrapper .modal-cart,
   .modal-wrapper .modal-payment {
