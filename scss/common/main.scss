@@ -1018,9 +1018,13 @@
 
     .modal-cart,
     .modal-payment {
-      max-width: 310px;
+      max-width: 100%;
       border-radius: 0;
       padding: 35px;
+
+      .modal-cart-check-down input {
+        box-sizing: border-box;
+      }
 
       &-content {
 

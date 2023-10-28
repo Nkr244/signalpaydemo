@@ -975,9 +975,13 @@ table {
   }
   .modal-wrapper .modal-cart,
   .modal-wrapper .modal-payment {
-    max-width: 310px;
+    max-width: 100%;
     border-radius: 0;
     padding: 35px;
+  }
+  .modal-wrapper .modal-cart .modal-cart-check-down input,
+  .modal-wrapper .modal-payment .modal-cart-check-down input {
+    box-sizing: border-box;
   }
   .modal-wrapper .modal-cart-content-pay,
   .modal-wrapper .modal-payment-content-pay {
