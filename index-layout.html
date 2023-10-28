@@ -5,6 +5,7 @@
     <title>Demo Shop</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body>
 <div id="app">
@@ -34,13 +35,14 @@
                             <a class="begin" href="">Начать</a>
                         </div>
                     </div>
-
-                    <div class="burger-menu" @click="openMenu()">
+                    <div class="burger-menu">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
+                    <div class="menu-mobile close">
 
+                    </div>
                 </div>
             </div>
 
@@ -70,26 +72,79 @@
             </section>
             <section class="product d-flex">
 
-                <div class="product-item" v-for="product in products">
-                    <img class="img-cart" :src="product.image" alt="">
+                <div class=product-item>
+                    <img class="img-cart" src="image/clock.png" alt="">
                     <div class="content-item-text">
-                        <p class="product-title">{{ product.title }}</p>
-                        <p class="product-subtitle text-grey">{{ product.subtitle }}</p>
-                        <p class="price">{{ product.price }} руб.<span class="old-price text-grey"
-                                                                       v-if="product.old_price">{{ product.old_price }} руб.</span>
-                        </p>
+                        <p class="product-title">Smart Watch GST 554</p>
+                        <p class="product-subtitle text-grey">GST Active Edition Space Black</p>
+                        <p class="price">2499руб.<span class="old-price text-grey">2999 руб.</span></p>
                         <div class="product-button">
-                            <a href="#" class="btn product-buy" @click="buy(product)">Купить</a>
-                            <a href="#" class="product-basket" :class="{'exists': isExistsInCart(product)}"
-                               @click.prevent="addToCart(product)">
-                                <img src="image/shopping-cart.svg" alt="" v-if="!isExistsInCart(product)">
-                                <img src="image/shopping-cart-exists.svg" alt="" v-else>
-                            </a>
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
-
-                <a class="product-basket-button" @click.prevent="openCart()" href="#"><span>{{ cart.length }}</span></a>
+                <div class="product-item">
+                    <img class="img-cart" src="image/toys.png" alt="">
+                    <div class="content-item-text">
+                        <p class="product-title">Игрушка «Лучшие друзья»</p>
+                        <p class="product-subtitle text-grey">Мягкая игрушка 3+</p>
+                        <p class="price">1299 руб.<span class="old-price text-grey">1999 руб.</span></p>
+                        <div class="product-button">
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img class="img-cart" src="image/stand-up.png" alt="">
+                    <div class="content-item-text">
+                        <p class="product-title">Билеты на Stand Up</p>
+                        <p class="product-subtitle text-grey">Comedy Show 20 июля</p>
+                        <p class="price">1499 руб.<span class="old-price text-grey"></span></p>
+                        <div class="product-button">
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img class="img-cart" src="image/burger.png" alt="">
+                    <div class="content-item-text">
+                        <p class="product-title">Бургер Super King</p>
+                        <p class="product-subtitle text-grey">Говядина, помидор, сырный соус, сыр</p>
+                        <p class="price">299 руб.<span class="old-price text-grey"></span></p>
+                        <div class="product-button">
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img class="img-cart" src="image/vitamin.png" alt="">
+                    <div class="content-item-text">
+                        <p class="product-title">Витамины BALANCEIN </p>
+                        <p class="product-subtitle text-grey">Мультивитаминный комплекс 90 табл</p>
+                        <p class="price">892 руб.<span class="old-price text-grey"></span></p>
+                        <div class="product-button">
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img class="img-cart" src="image/book.png" alt="">
+                    <div class="content-item-text">
+                        <p class="product-title">Курс «Как стать миллионером»</p>
+                        <p class="product-subtitle text-grey">Для тех, кто хочет прокачать мышление</p>
+                        <p class="price">2499 руб.<span class="old-price text-grey"></span></p>
+                        <div class="product-button">
+                            <a href="#" class="btn product-buy">Купить</a>
+                            <a href="#" class="product-basket"><img src="image/shopping-cart.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <a class="product-basket-button" href="#"><span>1</span></a>
             </section>
         </div>
         <section class="footer">
@@ -159,37 +214,51 @@
             </div>
         </section>
     </div>
-    <div v-if="cartIsOpen" class="modal-wrapper cart">
+    <div class="modal-wrapper cart close">
         <div class="modal-cart d-flex">
             <div class="modal-cart-title d-flex">
                 <p>КОРЗИНА</p>
-                <button class="btn-close" @click.prevent="closeCart()"><img src="image/close.png" alt=""></button>
+                <button class="btn-close"><img src="image/close.png" alt=""></button>
             </div>
-            <div class="product-list">
-                <div class="modal-cart-product d-flex" v-for="item in cart">
-                    <img :src="item.product.image" alt="">
+            <div class="product-list close">
+                <div class="modal-cart-product d-flex">
+                    <img src="image/smart-watch.png" alt="">
                     <div class="modal-cart-product-text d-flex">
-                        <p>{{ item.product.title }}</p>
-                        <p class="text-grey">{{ item.product.subtitle }}</p>
+                        <p>Smart Watch GST 554</p>
+                        <p class="text-grey">Space Black</p>
                     </div>
 
                     <div class="modal-cart-product-button">
-                        <button class="button-minus" @click.prevent="item.count != 1 ? item.count-- : ''"><img
-                                src="image/minus.svg" alt=""></button>
-                        <span class="col">{{ item.count }}</span>
-                        <button class="button-plus" @click.prevent="item.count++"><img src="image/plus.svg" alt="">
-                        </button>
+                        <button class="button-minus"><img src="image/minus.svg" alt=""></button>
+                        <span class="col">1</span>
+                        <button class="button-plus"><img src="image/plus.svg" alt=""></button>
                     </div>
                     <div class="modal-cart-product-price">
-                        {{ item.product.price * item.count }}руб.
+                        2499руб.
                     </div>
 
 
-                    <button class="btn-close" @click.prevent="removeFromCart(item.product)"><img
-                            src="image/close-mini.svg" alt=""></button>
+                    <button class="btn-close"><img src="image/close-mini.svg" alt=""></button>
+                </div>
+                <div class="modal-cart-product d-flex">
+                    <img src="image/burger-mini.png" alt="">
+                    <div class="modal-cart-product-text d-flex">
+                        <p>Бургер Super King</p>
+                        <p class="text-grey">Говядина, помидор, сырный соус, сыр</p>
+                    </div>
+
+                    <div class="modal-cart-product-button">
+                        <button class="button-minus"><img src="image/minus.svg" alt=""></button>
+                        <span class="col">1</span>
+                        <button class="button-plus"><img src="image/plus.svg" alt=""></button>
+                    </div>
+                    <div class="modal-cart-product-price">
+                        299 руб.
+                    </div>
+                    <button class="btn-close"><img src="image/close-mini.svg" alt=""></button>
                 </div>
             </div>
-            <div class="product-list product-list-mobile close">
+            <div class="product-list product-list-mobile">
                 <div class="modal-cart-product d-flex">
                     <img src="image/smart-watch.png" alt="">
                     <div>
@@ -235,7 +304,7 @@
             </div>
             <div class="modal-cart-result d-flex justify-content-between">
                 <p>ИТОГО</p>
-                <p>{{ totalCartSum }} руб.</p>
+                <p>2798 руб.</p>
             </div>
             <div class="modal-cart-check">
                 <div class="modal-cart-check-up d-flex justify-content-between">
@@ -260,20 +329,20 @@
                     <input type="email" placeholder="Ваш e-mail">
                 </div>
             </div>
-            <a class="btn" href="#" @click.prevent="openPayment()">Оплатить</a>
+            <a class="btn" href="#">Оплатить</a>
         </div>
     </div>
-    <div v-if="paymentIsOpen" class="modal-wrapper">
+    <div class="modal-wrapper close">
         <div class="modal-payment">
             <div class="modal-payment-header">
                 <p>ТЕСТОВЫЙ <span>РЕЖИМ РАБОТЫ</span></p>
-                <button class="btn-close" @click.prevent="closePayment()"><img src="image/close.png" alt=""></button>
+                <button class="btn-close"><img src="image/close.png" alt=""></button>
             </div>
             <div class="modal-payment-content">
                 <div class="modal-payment-content-header">
                     <img src="image/footer-logo.png" alt="">
                     <p>Оплата товаров в signalpay.ru</p>
-                    <span>{{ productBuy?.price ?? totalCartSum }} руб.</span>
+                    <span>2798 руб.</span>
                 </div>
                 <div class="modal-payment-content-form">
                     <div class="modal-payment-content-form-item">
@@ -293,7 +362,7 @@
                         <input class="pay-email" type="email" placeholder="Ваш e-mail">
                     </div>
                 </div>
-                <a class="btn" href="#">Оплатить {{ productBuy?.price ?? totalCartSum }} руб.</a>
+                <a class="btn" href="#">Оплатить 2798 руб.</a>
                 <div class="modal-payment-content-pay">
                     <img src="image/google-pay.jpg" alt="">
                     <img src="image/samsung-pay.jpg" alt="">
@@ -302,37 +371,6 @@
             </div>
         </div>
     </div>
-    <div class="menu-mobile-back" :class="{'open': menuIsOpen}">
-        <div class="menu-mobile">
-            <div>
-                <img src="image/logo.svg" alt="">
-                <button class="btn-close" @click.prevent="closeMenu()"><img src="image/close-white.png" alt=""></button>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="">Продукт</a></li>
-                        <li><a href="">Решения</a></li>
-                        <li><a href="">Разработчикам</a></li>
-                        <li><a href="">Внутри</a></li>
-                        <li><a href="">Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menu-mobile-footer">
-                <div class="login">
-                    <a class="begin" href="">Начать</a>
-                    <a class="go" href="">Вход</a>
-                </div>
-                <div class="language">
-                    <ul>
-                        <li><a href="">En</a></li>
-                        <li><a href="">Ru</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </div>
-<script src="js/app.js"></script>
 </body>
 </html>
