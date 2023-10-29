@@ -8,8 +8,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
 </head>
+
 <body>
+
 <div id="app">
+
     <div class="wrapper">
         <section class="header">
             <div class="container">
@@ -47,7 +50,9 @@
             </div>
 
         </section>
+
         <div class="container">
+
             <section class="sub-header">
                 <div class="sub-header-item d-flex">
                     <p class="title">DEMO SHOP <span>SIGNALPAY</span></p>
@@ -70,7 +75,15 @@
 
                 </div>
             </section>
+
+
             <section class="product d-flex">
+                <div class="absolute">
+                    <div class="sticky">
+                        <a class="product-basket-button" @click.prevent="openCart()" href="#"><span>{{ cart.length }}</span></a>
+
+                    </div>
+                </div>
 
                 <div class="product-item" v-for="product in products">
                     <img class="img-cart" :src="product.image" alt="">
@@ -91,7 +104,7 @@
                     </div>
                 </div>
 
-                <a class="product-basket-button" @click.prevent="openCart()" href="#"><span>{{ cart.length }}</span></a>
+
             </section>
         </div>
         <section class="footer">
@@ -201,16 +214,19 @@
                         </div>
                         <div class="button-price d-flex justify-content-between">
                             <div class="modal-cart-product-button">
-                                <button class="button-minus" @click.prevent="item.count != 1 ? item.count-- : ''"><img src="image/minus.svg" alt=""></button>
+                                <button class="button-minus" @click.prevent="item.count != 1 ? item.count-- : ''"><img
+                                        src="image/minus.svg" alt=""></button>
                                 <span class="col">{{ item.count }}</span>
-                                <button class="button-plus" @click.prevent="item.count++"><img src="image/plus.svg" alt=""></button>
+                                <button class="button-plus" @click.prevent="item.count++"><img src="image/plus.svg"
+                                                                                               alt=""></button>
                             </div>
                             <div class="modal-cart-product-price">
                                 {{ item.product.price * item.count }} руб.
                             </div>
                         </div>
                     </div>
-                    <button class="btn-delete btn-close" @click.prevent="removeFromCart(item.product)"><img src="image/close-mini.svg" alt=""></button>
+                    <button class="btn-delete btn-close" @click.prevent="removeFromCart(item.product)"><img
+                            src="image/close-mini.svg" alt=""></button>
 
                 </div>
             </div>

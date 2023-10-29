@@ -748,7 +748,19 @@
     margin-bottom: 30px;
   }
 }
-
+.absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.sticky {
+  position: sticky;
+  top: 50px;
+  height: 80px;
+  width: 80px;
+  z-index: 99999;
+}
 @media screen and (max-width: 1220px) {
 
   .container {
