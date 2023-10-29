@@ -969,13 +969,12 @@ table {
     padding: 0;
   }
   .modal-wrapper .modal-cart-product {
-    justify-content: start;
     gap: 10px;
   }
   .modal-wrapper .modal-cart-product-button {
     position: absolute;
-    top: 70%;
-    left: 79px;
+    top: 77%;
+    left: 88px;
   }
   .modal-wrapper .modal-cart-product-price {
     position: absolute;
@@ -993,7 +992,7 @@ table {
     margin-top: 0;
     max-width: 100%;
     border-radius: 0;
-    padding: 35px;
+    padding: 35px 20px;
   }
   .modal-wrapper .modal-cart .modal-cart-check-down input,
   .modal-wrapper .modal-payment .modal-cart-check-down input {

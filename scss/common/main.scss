@@ -1009,12 +1009,11 @@
     .modal-cart {
 
       &-product {
-        justify-content: start;
         gap: 10px;
         &-button {
           position: absolute;
-          top: 70%;
-          left: 79px;
+          top: 77%;
+          left: 88px;
         }
         &-price {
           position: absolute;
@@ -1026,6 +1025,7 @@
         }
         .btn-close {
           top: -20px;
+
         }
       }
     }
@@ -1035,7 +1035,7 @@
       margin-top: 0;
       max-width: 100%;
       border-radius: 0;
-      padding: 35px;
+      padding: 35px 20px;
 
       .modal-cart-check-down input {
         box-sizing: border-box;
