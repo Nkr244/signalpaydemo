@@ -496,8 +496,8 @@ table {
   position: relative;
 }
 .modal-cart-product .btn-close div {
-  width: 21px;
-  height: 21px;
+  width: 6px;
+  height: 17px;
 }
 .modal-cart-product .btn-close img {
   position: absolute;
