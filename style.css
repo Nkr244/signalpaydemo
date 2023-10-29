@@ -482,6 +482,7 @@ table {
   height: 21px;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(91, 92, 92);
+  padding: 5px;
 }
 .modal-cart-product .btn-close {
   top: 0;
