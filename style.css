@@ -495,12 +495,17 @@ table {
   border: 1px solid rgb(91, 92, 92);
   position: relative;
 }
+.modal-cart-product .btn-close div {
+  width: 21px;
+  height: 21px;
+}
 .modal-cart-product .btn-close img {
-  position: relative;
-  top: 0.12rem;
-  left: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6px;
   width: 8px;
-  height: 14px;
+  height: 8px;
 }
 .modal-cart-result {
   margin-bottom: 35px;

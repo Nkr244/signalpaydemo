@@ -419,13 +419,17 @@
       background: $white;
       border: 1px solid $grey;
       position: relative;
-
+      div {
+        width: 21px;
+        height: 21px;
+      }
       img {
-        position: relative;
-        top: 0.12rem;
-        left: 0px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 6px;
         width: 8px;
-        height: 14px;
+        height: 8px;
       }
     }
   }
