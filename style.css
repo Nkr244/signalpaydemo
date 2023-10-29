@@ -495,11 +495,12 @@ table {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(91, 92, 92);
   position: relative;
+  padding: 9px 5px;
 }
 .modal-cart-product .btn-close img {
-  position: relative;
-  top: 0;
-  left: -1px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
   width: 8px;
   height: 8px;
 }

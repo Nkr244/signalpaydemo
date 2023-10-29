@@ -420,10 +420,11 @@
       background: $white;
       border: 1px solid $grey;
       position: relative;
+      padding: 9px 5px;
       img {
-        position: relative;
-        top: 0;
-        left: -1px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
         width: 8px;
         height: 8px;
       }
